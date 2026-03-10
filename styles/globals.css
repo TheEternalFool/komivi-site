@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply bg-sand text-ink font-body antialiased;
+}
+
+.section {
+  @apply py-16 md:py-24;
+}
+
+.container {
+  @apply mx-auto w-full max-w-6xl px-6;
+}
+
+.card {
+  @apply rounded-2xl border border-mist bg-white p-6 shadow-sm transition hover:shadow-md;
+}
+
+.tag {
+  @apply inline-flex items-center rounded-full border border-mist bg-white px-3 py-1 text-xs font-medium text-slate;
+}
+
+.prose h2 {
+  @apply mt-8 text-xl font-semibold text-ink;
+}
+
+.prose p {
+  @apply mt-4 leading-relaxed text-slate;
+}
+
+.prose ul {
+  @apply mt-4 list-disc space-y-2 pl-5 text-slate;
+}
