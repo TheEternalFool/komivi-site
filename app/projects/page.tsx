@@ -1,3 +1,4 @@
+import type { Route } from "next";
 import ProjectCard from "@/components/ProjectCard";
 
 const projects = [
@@ -5,19 +6,19 @@ const projects = [
     title: "Market Regime Classifier",
     description: "Identifies market phases and shifts using hidden Markov models.",
     technologies: ["Python", "HMM", "Time Series"],
-    href: "/projects"
+    href: "/projects" as Route
   },
   {
     title: "AI-Powered Credit Scoring",
     description: "Explainable ML for credit risk and financial inclusion.",
     technologies: ["XGBoost", "SHAP", "Fintech"],
-    href: "/projects"
+    href: "/projects" as Route
   },
   {
     title: "Portfolio Stress Lab",
     description: "Scenario analytics for multi-asset portfolios.",
     technologies: ["Risk", "Optimization", "Analytics"],
-    href: "/projects"
+    href: "/projects" as Route
   }
 ];
 

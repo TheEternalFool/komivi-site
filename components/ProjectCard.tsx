@@ -1,10 +1,11 @@
+import type { Route } from "next";
 import Link from "next/link";
 
 interface ProjectCardProps {
   title: string;
   description: string;
   technologies: string[];
-  href: string;
+  href: Route;
 }
 
 export default function ProjectCard({ title, description, technologies, href }: ProjectCardProps) {

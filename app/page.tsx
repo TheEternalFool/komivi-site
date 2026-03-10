@@ -1,3 +1,4 @@
+import type { Route } from "next";
 import Link from "next/link";
 import BlogCard from "@/components/BlogCard";
 import ProjectCard from "@/components/ProjectCard";
@@ -8,13 +9,13 @@ const projects = [
     title: "Market Regime Classifier",
     description: "Detect market phases using probabilistic models and time-series analytics.",
     technologies: ["Python", "HMM", "Statistics"],
-    href: "/projects"
+    href: "/projects" as Route
   },
   {
     title: "AI-Powered Credit Scoring",
     description: "Explainable risk modeling for lending decisions and SME growth.",
     technologies: ["XGBoost", "SHAP", "Fintech"],
-    href: "/projects"
+    href: "/projects" as Route
   }
 ];
 
