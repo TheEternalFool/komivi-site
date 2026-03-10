@@ -1,110 +1,88 @@
-import type { Route } from "next";
 import Link from "next/link";
-import BlogCard from "@/components/BlogCard";
+import Container from "@/components/Container";
+import Section from "@/components/Section";
+import Hero from "@/components/Hero";
 import ProjectCard from "@/components/ProjectCard";
-import { getAllPosts } from "@/lib/posts";
-
-const projects = [
-  {
-    title: "Market Regime Classifier",
-    description: "Detect market phases using probabilistic models and time-series analytics.",
-    technologies: ["Python", "HMM", "Statistics"],
-    href: "/projects" as Route
-  },
-  {
-    title: "AI-Powered Credit Scoring",
-    description: "Explainable risk modeling for lending decisions and SME growth.",
-    technologies: ["XGBoost", "SHAP", "Fintech"],
-    href: "/projects" as Route
-  }
-];
+import WritingCard from "@/components/WritingCard";
+import Badge from "@/components/Badge";
+import { profile } from "@/content/profile";
+import { projects } from "@/content/projects";
+import { getAllWriting } from "@/lib/writing";
 
 export default function HomePage() {
-  const posts = getAllPosts().slice(0, 3);
+  const featuredProjects = projects.filter((project) => project.featured).slice(0, 2);
+  const latestWriting = getAllWriting().slice(0, 3);
 
   return (
     <div>
-      <section className="section">
-        <div className="container grid gap-12 md:grid-cols-[1.2fr_0.8fr] md:items-center">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate">
-              Komivi Assiamua
-            </p>
-            <h1 className="mt-4 text-4xl font-semibold leading-tight md:text-5xl">
-              Business Analytics | Artificial Intelligence | Decision Science
-            </h1>
-            <p className="mt-6 text-base text-slate">
-              I build data-driven systems that turn uncertainty into strategy. This platform shares my
-              research, experiments, and projects at the intersection of analytics, finance, and AI.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Link href="/projects" className="rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white">
-                View projects
-              </Link>
-              <Link href="/contact" className="rounded-full border border-ink px-6 py-3 text-sm font-semibold">
-                Let’s collaborate
-              </Link>
+      <Hero />
+
+      <Section className="bg-surface/40">
+        <Container>
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-xs font-mono uppercase tracking-[0.3em] text-muted">Introduction</p>
+              <h2 className="mt-3 text-2xl font-semibold text-text">A calm, rigorous approach to decisions</h2>
             </div>
           </div>
-          <div className="card">
-            <h2 className="text-lg font-semibold">Focus Areas</h2>
-            <ul className="mt-4 space-y-3 text-sm text-slate">
-              <li>Business analytics & decision intelligence</li>
-              <li>Probabilistic modeling & forecasting</li>
-              <li>AI systems for financial markets</li>
-              <li>Entrepreneurship & growth strategy</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+          <p className="mt-6 max-w-2xl text-sm leading-relaxed text-muted">
+            {profile.summary} This space documents my research notes, experiments, and professional thinking at
+            the intersection of analytics, AI, probability, and finance.
+          </p>
+        </Container>
+      </Section>
 
-      <section className="section bg-white">
-        <div className="container">
+      <Section>
+        <Container>
           <div className="flex items-center justify-between">
-            <h2 className="text-2xl font-semibold">Featured Projects</h2>
+            <h2 className="text-2xl font-semibold text-text">Featured projects</h2>
             <Link href="/projects" className="text-sm font-semibold text-accent hover:underline">
               View all
             </Link>
           </div>
           <div className="mt-8 grid gap-6 md:grid-cols-2">
-            {projects.map((project) => (
-              <ProjectCard key={project.title} {...project} />
+            {featuredProjects.map((project) => (
+              <ProjectCard key={project.slug} project={project} />
             ))}
           </div>
-        </div>
-      </section>
+        </Container>
+      </Section>
 
-      <section className="section">
-        <div className="container">
+      <Section className="bg-surface/40">
+        <Container>
           <div className="flex items-center justify-between">
-            <h2 className="text-2xl font-semibold">Latest Writing</h2>
-            <Link href="/blog" className="text-sm font-semibold text-accent hover:underline">
-              Read the blog
+            <h2 className="text-2xl font-semibold text-text">Selected writing</h2>
+            <Link href="/writing" className="text-sm font-semibold text-accent hover:underline">
+              Explore writing
             </Link>
           </div>
           <div className="mt-8 grid gap-6 md:grid-cols-3">
-            {posts.map((post) => (
-              <BlogCard key={post.slug} {...post} />
+            {latestWriting.map((post) => (
+              <WritingCard key={post.slug} post={post} />
             ))}
           </div>
-        </div>
-      </section>
+        </Container>
+      </Section>
 
-      <section className="section bg-white">
-        <div className="container">
-          <div className="card flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
+      <Section>
+        <Container>
+          <div className="card flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div>
-              <h2 className="text-2xl font-semibold">Ready to build something bold?</h2>
-              <p className="mt-2 text-sm text-slate">
-                Let’s discuss analytics products, AI strategy, or research collaborations.
+              <Badge>Contact</Badge>
+              <h2 className="mt-3 text-2xl font-semibold text-text">Let’s collaborate on meaningful work</h2>
+              <p className="mt-2 text-sm text-muted">
+                Research, strategy, analytics products, or AI systems with real-world impact.
               </p>
             </div>
-            <Link href="/contact" className="rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white">
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center rounded-full bg-text px-6 py-3 text-sm font-semibold text-background"
+            >
               Contact me
             </Link>
           </div>
-        </div>
-      </section>
+        </Container>
+      </Section>
     </div>
   );
 }

@@ -1,30 +1,33 @@
-import type { Route } from "next";
-import Link from "next/link";
+import type { Project } from "@/lib/content";
+import Badge from "@/components/Badge";
 
 interface ProjectCardProps {
-  title: string;
-  description: string;
-  technologies: string[];
-  href: Route;
+  project: Project;
 }
 
-export default function ProjectCard({ title, description, technologies, href }: ProjectCardProps) {
+export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <article className="card flex h-full flex-col gap-4">
-      <div className="flex-1">
-        <h3 className="text-lg font-semibold text-ink">{title}</h3>
-        <p className="mt-2 text-sm text-slate">{description}</p>
+      <div className="flex items-center justify-between">
+        <h3 className="text-lg font-semibold text-text">{project.title}</h3>
+        {project.status && <Badge>{project.status}</Badge>}
       </div>
+      <p className="text-sm text-muted">{project.summary}</p>
+      <p className="text-sm text-muted">{project.description}</p>
       <div className="flex flex-wrap gap-2">
-        {technologies.map((tech) => (
-          <span key={tech} className="tag">
-            {tech}
-          </span>
+        {project.technologies.map((tech) => (
+          <Badge key={tech}>{tech}</Badge>
         ))}
       </div>
-      <Link href={href} className="text-sm font-semibold text-accent hover:underline">
-        View project →
-      </Link>
+      {project.links && project.links.length > 0 && (
+        <div className="text-sm text-accent">
+          {project.links.map((link) => (
+            <a key={link.href} href={link.href} className="hover:underline">
+              {link.label}
+            </a>
+          ))}
+        </div>
+      )}
     </article>
   );
 }

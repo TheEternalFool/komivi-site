@@ -1,28 +1,45 @@
-import type { Route } from "next";
 import Link from "next/link";
+import type { Route } from "next";
+import Container from "@/components/Container";
 
 const links: { href: Route; label: string }[] = [
   { href: "/about", label: "About" },
   { href: "/projects", label: "Projects" },
-  { href: "/blog", label: "Blog" },
+  { href: "/writing", label: "Writing" },
   { href: "/contact", label: "Contact" }
 ];
 
 export default function Navbar() {
   return (
-    <header className="border-b border-mist bg-white/80 backdrop-blur">
-      <div className="container flex items-center justify-between py-5">
-        <Link href="/" className="text-lg font-semibold tracking-tight">
-          Komivi Assiamua
+    <header className="border-b border-border/80 bg-background/80 backdrop-blur">
+      <Container className="flex items-center justify-between py-5">
+        <Link href="/" className="text-sm font-semibold tracking-[0.2em] text-text">
+          KOMIVI ASSIAMUA
         </Link>
-        <nav className="flex items-center gap-6 text-sm font-medium text-slate">
+        <nav className="hidden items-center gap-6 text-sm font-medium text-muted md:flex">
           {links.map((link) => (
-            <Link key={link.href} href={link.href} className="hover:text-ink">
+            <Link key={link.href} href={link.href} className="hover:text-text">
               {link.label}
             </Link>
           ))}
         </nav>
-      </div>
+        <details className="relative md:hidden">
+          <summary className="cursor-pointer list-none text-sm font-semibold text-text">
+            Menu
+          </summary>
+          <div className="absolute right-0 top-9 z-10 w-40 rounded-xl border border-border bg-surface p-3 shadow-lg">
+            <ul className="space-y-2 text-sm text-muted">
+              {links.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="block hover:text-text">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </details>
+      </Container>
     </header>
   );
 }
