@@ -14,7 +14,7 @@ const links: { href: Route; label: string }[] = [
 
 export default function Navbar() {
   return (
-    <header className="sticky top-0 z-40 border-b border-border/70 bg-background/85 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-border/80 bg-background/90 backdrop-blur">
       <Container className="flex items-center justify-between py-5">
         <Link href="/" className="text-xs font-semibold tracking-[0.35em] text-text transition hover:text-accent">
           KOMIVI ASSIAMUA
@@ -30,7 +30,7 @@ export default function Navbar() {
           <summary className="cursor-pointer list-none text-sm font-semibold text-text transition hover:text-accent">
             Menu
           </summary>
-          <div className="absolute right-0 top-9 z-10 w-52 rounded-2xl border border-border bg-surface p-3 shadow-2xl">
+          <div className="absolute right-0 top-9 z-10 w-52 rounded-2xl border border-border bg-white p-3 shadow-2xl">
             <ul className="space-y-2 text-sm text-muted">
               {links.map((link) => (
                 <li key={link.href}>

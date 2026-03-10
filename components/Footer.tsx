@@ -4,7 +4,7 @@ import { profile } from "@/content/profile";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-border">
+    <footer className="border-t border-border bg-surface/60">
       <Container className="grid gap-6 py-12 md:grid-cols-[1.2fr_0.8fr] md:items-center">
         <div>
           <p className="text-sm font-semibold text-text">{profile.fullName}</p>

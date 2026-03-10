@@ -7,29 +7,17 @@
 :root {
   --font-body: "IBM Plex Sans";
   --font-mono: "IBM Plex Mono";
-  --background: 210 20% 98%;
-  --surface: 210 20% 96%;
-  --text: 222 47% 11%;
-  --muted: 215 16% 47%;
-  --border: 214 18% 88%;
+  --background: 210 33% 98%;
+  --surface: 210 30% 96%;
+  --surface-strong: 210 25% 94%;
+  --text: 222 40% 12%;
+  --muted: 215 16% 45%;
+  --border: 214 18% 86%;
   --accent: 196 85% 42%;
-  --accent-soft: 196 85% 65%;
+  --accent-soft: 196 80% 70%;
   --glow: 196 75% 55%;
-  --shadow: 220 40% 2%;
+  --shadow: 220 40% 12%;
   color-scheme: light;
-}
-
-.dark {
-  --background: 222 30% 7%;
-  --surface: 222 26% 10%;
-  --text: 210 40% 96%;
-  --muted: 217 16% 65%;
-  --border: 220 16% 22%;
-  --accent: 196 90% 55%;
-  --accent-soft: 196 70% 65%;
-  --glow: 196 85% 55%;
-  --shadow: 210 40% 2%;
-  color-scheme: dark;
 }
 
 body {
@@ -43,34 +31,34 @@ body {
 
 .background-grid {
   background-image:
-    radial-gradient(circle at top, hsl(var(--accent) / 0.15), transparent 55%),
-    radial-gradient(circle at 20% 20%, hsl(var(--accent) / 0.08), transparent 45%);
+    radial-gradient(circle at top, hsl(var(--accent) / 0.12), transparent 55%),
+    radial-gradient(circle at 15% 20%, hsl(var(--accent) / 0.08), transparent 45%);
 }
 
 .container {
-  @apply mx-auto w-full max-w-5xl px-5 md:px-8;
+  @apply mx-auto w-full max-w-6xl px-6 md:px-10;
 }
 
 .section {
-  @apply py-16 md:py-24;
+  @apply py-20 md:py-28;
 }
 
 .section-title {
-  @apply text-2xl font-semibold text-text;
+  @apply text-3xl font-semibold text-text md:text-4xl;
 }
 
 .section-eyebrow {
-  @apply text-xs font-mono uppercase tracking-[0.3em] text-muted;
+  @apply text-xs font-mono uppercase tracking-[0.35em] text-muted;
 }
 
 .card {
-  @apply rounded-2xl border border-border bg-surface p-6 transition;
-  box-shadow: 0 0 0 1px hsl(var(--border)) inset, 0 10px 30px hsl(var(--shadow) / 0.25);
+  @apply rounded-3xl border border-border bg-surface p-6 transition;
+  box-shadow: 0 1px 0 hsl(var(--border)) inset, 0 16px 40px hsl(var(--shadow) / 0.08);
 }
 
 .card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 0 1px hsl(var(--accent) / 0.35) inset, 0 16px 40px hsl(var(--shadow) / 0.35);
+  box-shadow: 0 0 0 1px hsl(var(--accent) / 0.2) inset, 0 24px 55px hsl(var(--shadow) / 0.12);
 }
 
 .badge {
@@ -118,7 +106,7 @@ body {
 }
 
 .glow {
-  box-shadow: 0 0 25px hsl(var(--glow) / 0.25);
+  box-shadow: 0 0 35px hsl(var(--glow) / 0.25);
 }
 
 @keyframes fade-in {
@@ -155,7 +143,7 @@ body {
 }
 
 .prose h2 {
-  @apply mt-8 text-xl font-semibold text-text;
+  @apply mt-8 text-2xl font-semibold text-text;
 }
 
 .prose p {
