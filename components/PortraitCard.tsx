@@ -16,14 +16,14 @@ export default function PortraitCard({ imageSrc = "/portrait.png" }: PortraitCar
         <Image
           src={imageSrc}
           alt="Portrait of Komivi Jarod Manuel Assiamua"
-          width={520}
-          height={620}
-          className="h-[320px] w-full object-cover"
+          width={560}
+          height={720}
+          className="h-[360px] w-full object-cover"
           priority
         />
       </div>
       <p className="mt-4 text-xs text-muted">
-        Placeholder: replace with your final portrait image if needed.
+        Placeholder: replace with your final portrait image if needed. Expected path: /public/portrait.png
       </p>
     </div>
   );

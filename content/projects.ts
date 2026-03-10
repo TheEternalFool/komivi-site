@@ -41,8 +41,7 @@ export const projects: Project[] = [
     title: "AI / Analytics Project Placeholder",
     slug: "ai-analytics-placeholder",
     summary: "Placeholder for an additional analytics or AI project.",
-    description:
-      "Placeholder: add scope, methods, and outcomes.",
+    description: "Placeholder: add scope, methods, and outcomes.",
     technologies: ["Analytics", "AI"],
     tags: ["Placeholder"],
     links: [{ label: "Placeholder: project link", href: "#" }],

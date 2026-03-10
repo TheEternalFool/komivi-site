@@ -37,18 +37,6 @@ export type Project = {
   status?: "active" | "archived" | "experiment";
 };
 
-export type WritingPost = {
-  title: string;
-  slug: string;
-  summary: string;
-  date: string;
-  tags: string[];
-  readingTime: string;
-  contentHtml: string;
-};
-
-export type WritingPostMeta = Omit<WritingPost, "contentHtml">;
-
 export type BookEntry = {
   title: string;
   author?: string;

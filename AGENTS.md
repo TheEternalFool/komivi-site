@@ -2,13 +2,13 @@
 
 ## Project purpose
 This repository contains the personal website of Komivi Jarod Manuel Assiamua.
-The site is a modern, text-first personal platform combining portfolio, projects, writing, and curated reading.
+The site is a modern, light-first personal platform combining profile, projects, reading, and a live assistant.
 
 ## Tech stack
 - Next.js App Router
 - TypeScript
 - Tailwind CSS
-- Markdown or MDX content
+- OpenAI Responses API
 - Vercel deployment target
 
 ## Engineering principles
@@ -19,13 +19,10 @@ The site is a modern, text-first personal platform combining portfolio, projects
 - Keep code readable and production-minded
 
 ## Design principles
-- Minimal
-- Elegant
-- Technical
-- Text-first
-- Dark-first if appropriate
-- Avoid generic startup aesthetics
-- Avoid flashy interactions unless they improve clarity
+- Light-first, premium, modern
+- Bold typography and clean hierarchy
+- Subtle motion and polished interactions
+- Avoid clutter and gimmicks
 
 ## Git workflow
 - main = production
@@ -43,16 +40,16 @@ Agent 1 (design system + shared UI)
 - design system and tokens
 - shared UI components
 - layout, navbar, footer
-- reusable components
+- motion foundation
+- homepage visual direction
 
 Agent 2 (pages + content architecture)
 - page routes and structure
-- content models and markdown scaffolding
-- About, Education, Projects, Writing, Reading, Chess, Contact
-- homepage content structure
+- content models and scaffolding
+- About, Education, Projects, Reading, Chess, Contact
 
 Agent 3 (docs + quality)
-- AGENTS.md, README.md, spec.md, plans.md
+- README, AGENTS, spec/plans
 - CI and workflow docs
 - metadata and SEO basics
 - Vercel readiness

@@ -1,17 +1,17 @@
 # Komivi Personal Platform
 
-Modern personal website built with Next.js (App Router), TypeScript, and Tailwind CSS. It serves as a portfolio, project showcase, writing platform, and curated reading space.
+Modern personal website built with Next.js (App Router), TypeScript, and Tailwind CSS. It serves as a portfolio, project showcase, and curated reading space with an AI assistant.
 
 ## Project Purpose
 
-This repository contains the personal website of Komivi Jarod Manuel Assiamua. The site is a modern, text-first personal platform combining portfolio, projects, writing, and research-oriented content.
+This repository contains the personal website of Komivi Jarod Manuel Assiamua. The site is a modern, light-first personal platform combining profile, projects, reading, and research-oriented context.
 
 ## Tech Stack
 
 - Next.js (App Router)
 - TypeScript
 - Tailwind CSS
-- Markdown content (`content/writing`)
+- OpenAI Responses API (assistant)
 - Deployment target: Vercel
 
 ## Architecture
@@ -19,7 +19,7 @@ This repository contains the personal website of Komivi Jarod Manuel Assiamua. T
 ```
 app/            Next.js routes (App Router)
 components/     Reusable UI components
-content/        Profile, education, projects, reading, chess, and writing markdown
+content/        Profile, education, projects, reading, chess
 lib/            Content utilities and data models
 public/         Static assets
 styles/         Global styles and Tailwind layers
@@ -32,15 +32,13 @@ styles/         Global styles and Tailwind layers
 - `/about` About
 - `/education` Education
 - `/projects` Projects
-- `/writing` Writing
-- `/writing/[slug]` Writing detail
 - `/reading` Reading
 - `/chess` Chess
 - `/contact` Contact
 
-### Content System
+### Assistant
 
-Markdown files live in `content/writing` and are parsed at build time using `gray-matter` and `remark`. Data models live in `lib/content.ts`.
+The homepage includes a live assistant panel backed by a Route Handler (`app/api/chat/route.ts`).
 
 ## Pipelines
 
@@ -84,9 +82,17 @@ PORT=3001 npm run dev -- -H 127.0.0.1
 npm run build
 ```
 
+## Configuration
+
+Create a `.env.local` file with:
+
+```
+OPENAI_API_KEY=your_key
+OPENAI_MODEL=gpt-4.1-mini
+```
+
 ## Content Editing
 
-- Writing posts: `content/writing/*.md`
 - Projects: `content/projects.ts`
 - Education: `content/education.ts`
 - Reading lists: `content/reading.ts`

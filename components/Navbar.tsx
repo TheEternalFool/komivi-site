@@ -6,7 +6,6 @@ const links: { href: Route; label: string }[] = [
   { href: "/about", label: "About" },
   { href: "/education", label: "Education" },
   { href: "/projects", label: "Projects" },
-  { href: "/writing", label: "Writing" },
   { href: "/reading", label: "Reading" },
   { href: "/chess", label: "Chess" },
   { href: "/contact", label: "Contact" }
