@@ -2,37 +2,49 @@ import type { Project } from "@/lib/content";
 
 export const projects: Project[] = [
   {
-    title: "Market Regime Classifier",
-    slug: "market-regime-classifier",
-    summary: "Detect market phases using probabilistic models and time-series analytics.",
+    title: "Transformer-Based Sentiment Analysis",
+    slug: "transformer-sentiment-analysis",
+    summary: "Sentiment modeling pipeline using transformer architectures for market and business signals.",
     description:
-      "A research prototype for identifying regime shifts and volatility clusters to inform portfolio positioning.",
-    technologies: ["Python", "HMM", "Time Series"],
-    tags: ["Markets", "Modeling"],
+      "Placeholder: expand with datasets, evaluation strategy, and deployment context.",
+    technologies: ["Python", "Transformers", "NLP"],
+    tags: ["AI", "NLP", "Analytics"],
     links: [{ label: "Placeholder: project link", href: "#" }],
     featured: true,
     status: "experiment"
   },
   {
-    title: "AI-Powered Credit Scoring",
-    slug: "ai-credit-scoring",
-    summary: "Explainable risk modeling for lending decisions and SME growth.",
+    title: "Polymarket Research Project",
+    slug: "polymarket-research",
+    summary: "Research on prediction markets, market signals, and decision-making under uncertainty.",
     description:
-      "A transparent modeling workflow that combines predictive performance with interpretability for credit risk teams.",
-    technologies: ["XGBoost", "SHAP", "Fintech"],
-    tags: ["Risk", "AI"],
+      "Placeholder: add research questions, methods, and findings summary.",
+    technologies: ["Research", "Markets", "Analytics"],
+    tags: ["Finance", "Decision Science"],
     links: [{ label: "Placeholder: project link", href: "#" }],
     featured: true,
     status: "active"
   },
   {
-    title: "Portfolio Stress Lab",
-    slug: "portfolio-stress-lab",
-    summary: "Scenario analytics for multi-asset portfolios.",
+    title: "Venture / Business Concept",
+    slug: "venture-concept",
+    summary: "Business concept focused on analytics-driven decision support.",
     description:
-      "An exploratory environment for stress testing and scenario planning across macro regimes.",
-    technologies: ["Risk", "Optimization", "Analytics"],
-    tags: ["Strategy", "Research"],
+      "Placeholder: define the problem, target users, and strategy thesis.",
+    technologies: ["Strategy", "Entrepreneurship", "Analytics"],
+    tags: ["Venture", "Product"],
+    links: [{ label: "Placeholder: project link", href: "#" }],
+    featured: false,
+    status: "experiment"
+  },
+  {
+    title: "AI / Analytics Project Placeholder",
+    slug: "ai-analytics-placeholder",
+    summary: "Placeholder for an additional analytics or AI project.",
+    description:
+      "Placeholder: add scope, methods, and outcomes.",
+    technologies: ["Analytics", "AI"],
+    tags: ["Placeholder"],
     links: [{ label: "Placeholder: project link", href: "#" }],
     featured: false,
     status: "experiment"

@@ -1,10 +1,10 @@
 # Komivi Personal Platform
 
-Modern personal website built with Next.js (App Router), TypeScript, and Tailwind CSS. It serves as a portfolio, project showcase, writing platform, and research space.
+Modern personal website built with Next.js (App Router), TypeScript, and Tailwind CSS. It serves as a portfolio, project showcase, writing platform, and curated reading space.
 
 ## Project Purpose
 
-This repository contains the personal website of Komivi Assiamua. The site is a modern, text-first personal platform combining portfolio, projects, and writing.
+This repository contains the personal website of Komivi Jarod Manuel Assiamua. The site is a modern, text-first personal platform combining portfolio, projects, writing, and research-oriented content.
 
 ## Tech Stack
 
@@ -19,7 +19,7 @@ This repository contains the personal website of Komivi Assiamua. The site is a 
 ```
 app/            Next.js routes (App Router)
 components/     Reusable UI components
-content/        Profile, project data, and writing markdown
+content/        Profile, education, projects, reading, chess, and writing markdown
 lib/            Content utilities and data models
 public/         Static assets
 styles/         Global styles and Tailwind layers
@@ -28,16 +28,19 @@ styles/         Global styles and Tailwind layers
 
 ### Core Routes
 
-- `/` Home (hero, intro, featured projects, writing, CTA)
-- `/about` About and skills
-- `/projects` Project grid
-- `/writing` Writing index
-- `/writing/[slug]` Writing detail (Markdown)
-- `/contact` Contact form + social links
+- `/` Home
+- `/about` About
+- `/education` Education
+- `/projects` Projects
+- `/writing` Writing
+- `/writing/[slug]` Writing detail
+- `/reading` Reading
+- `/chess` Chess
+- `/contact` Contact
 
 ### Content System
 
-Markdown files live in `content/writing` and are parsed at build time using `gray-matter` and `remark`. Content models are defined in `lib/content.ts`.
+Markdown files live in `content/writing` and are parsed at build time using `gray-matter` and `remark`. Data models live in `lib/content.ts`.
 
 ## Pipelines
 
@@ -85,7 +88,10 @@ npm run build
 
 - Writing posts: `content/writing/*.md`
 - Projects: `content/projects.ts`
-- Profile details: `content/profile.ts`
+- Education: `content/education.ts`
+- Reading lists: `content/reading.ts`
+- Chess: `content/chess.ts`
+- Profile: `content/profile.ts`
 - Social links: `content/social.ts`
 
 ## License

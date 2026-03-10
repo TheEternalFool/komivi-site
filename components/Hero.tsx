@@ -16,9 +16,9 @@ interface HeroProps {
 
 export default function Hero({
   eyebrow = "Personal Platform",
-  title = profile.name,
-  subtitle = profile.title,
-  description = profile.summary,
+  title = profile.fullName,
+  subtitle = profile.headline,
+  description = profile.intro,
   primaryCta = { label: "Explore projects", href: "/projects" },
   secondaryCta = { label: "Contact", href: "/contact" }
 }: HeroProps) {

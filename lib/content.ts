@@ -4,14 +4,22 @@ export type SocialLink = {
 };
 
 export type Profile = {
-  name: string;
-  title: string;
-  summary: string;
-  email: string;
-  location?: string;
+  fullName: string;
+  headline: string;
+  intro: string;
+  background: string[];
   interests: string[];
-  education?: string[];
   skills: string[];
+  email: string;
+  socials: SocialLink[];
+};
+
+export type EducationEntry = {
+  institution: string;
+  degree: string;
+  startYear: string;
+  endYear: string;
+  description?: string;
 };
 
 export type Project = {
@@ -40,3 +48,20 @@ export type WritingPost = {
 };
 
 export type WritingPostMeta = Omit<WritingPost, "contentHtml">;
+
+export type BookEntry = {
+  title: string;
+  author?: string;
+  note?: string;
+};
+
+export type ReadingCategory = {
+  name: string;
+  description?: string;
+  books: BookEntry[];
+};
+
+export type ChessProfile = {
+  intro: string;
+  lichessUrl: string;
+};

@@ -16,7 +16,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: WritingPostPageProps): Promise<Metadata> {
   const post = await getWritingBySlug(params.slug);
   return {
-    title: `${post.title} | Komivi Assiamua`,
+    title: `${post.title} | Komivi Jarod Manuel Assiamua`,
     description: post.summary
   };
 }

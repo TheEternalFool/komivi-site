@@ -19,6 +19,11 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           <Badge key={tech}>{tech}</Badge>
         ))}
       </div>
+      <div className="flex flex-wrap gap-2">
+        {project.tags.map((tag) => (
+          <Badge key={tag}>{tag}</Badge>
+        ))}
+      </div>
       {project.links && project.links.length > 0 && (
         <div className="text-sm text-accent">
           {project.links.map((link) => (
