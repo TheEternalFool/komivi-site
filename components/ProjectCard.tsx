@@ -7,7 +7,7 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <article className="card flex h-full flex-col gap-4">
+    <article className="card hover-lift flex h-full flex-col gap-4">
       <div className="flex items-center justify-between">
         <h3 className="text-lg font-semibold text-text">{project.title}</h3>
         {project.status && <Badge>{project.status}</Badge>}
@@ -27,7 +27,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       {project.links && project.links.length > 0 && (
         <div className="text-sm text-accent">
           {project.links.map((link) => (
-            <a key={link.href} href={link.href} className="hover:underline">
+            <a key={link.href} href={link.href} className="transition hover:underline">
               {link.label}
             </a>
           ))}

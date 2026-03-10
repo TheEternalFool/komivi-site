@@ -23,11 +23,11 @@ export default function Hero({
   secondaryCta = { label: "Contact", href: "/contact" }
 }: HeroProps) {
   return (
-    <Section>
+    <Section className="background-grid">
       <Container>
         <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
-          <div>
-            <Badge>{eyebrow}</Badge>
+          <div className="fade-in-up">
+            <Badge tone="accent">{eyebrow}</Badge>
             <h1 className="mt-5 text-4xl font-semibold tracking-tight text-text md:text-5xl">
               {title}
             </h1>
@@ -35,13 +35,13 @@ export default function Hero({
             <p className="mt-6 text-sm leading-relaxed text-muted">{description}</p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Button href={primaryCta.href}>{primaryCta.label}</Button>
-              <Button href={secondaryCta.href} variant="ghost">
+              <Button href={secondaryCta.href} variant="outline">
                 {secondaryCta.label}
               </Button>
             </div>
           </div>
-          <div className="card">
-            <p className="text-xs font-mono uppercase tracking-[0.3em] text-muted">Focus areas</p>
+          <div className="card fade-in-up">
+            <p className="section-eyebrow">Focus areas</p>
             <ul className="mt-4 space-y-3 text-sm text-muted">
               {profile.interests.map((item) => (
                 <li key={item}>{item}</li>
