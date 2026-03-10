@@ -8,7 +8,7 @@ interface BadgeProps {
 export default function Badge({ children, tone = "default" }: BadgeProps) {
   const styles =
     tone === "accent"
-      ? "border-accent/40 text-accent"
+      ? "border-accent/30 text-accent"
       : "border-border text-muted";
 
   return <span className={`badge font-mono ${styles}`}>{children}</span>;

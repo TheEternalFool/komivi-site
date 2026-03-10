@@ -8,18 +8,20 @@ import Badge from "@/components/Badge";
 import { profile } from "@/content/profile";
 import { projects } from "@/content/projects";
 import { readingCategories } from "@/content/reading";
+import { education } from "@/content/education";
 import { getAllWriting } from "@/lib/writing";
 
 export default function HomePage() {
   const featuredProjects = projects.filter((project) => project.featured).slice(0, 2);
   const latestWriting = getAllWriting().slice(0, 3);
   const featuredReading = readingCategories.slice(0, 2);
+  const educationSnapshot = education.slice(0, 2);
 
   return (
     <div>
       <Hero />
 
-      <Section className="bg-surface/40">
+      <Section className="bg-surface/60">
         <Container>
           <div className="fade-in-up">
             <p className="section-eyebrow">Introduction</p>
@@ -53,7 +55,7 @@ export default function HomePage() {
         </Container>
       </Section>
 
-      <Section className="bg-surface/40">
+      <Section className="bg-surface/60">
         <Container>
           <div className="flex items-center justify-between">
             <h2 className="section-title">Selected writing</h2>
@@ -86,6 +88,31 @@ export default function HomePage() {
                 <Badge tone="accent">{category.name}</Badge>
                 <p className="mt-3 text-sm text-muted">
                   {category.description ?? "Placeholder: add a short note for this category."}
+                </p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </Section>
+
+      <Section className="bg-surface/60">
+        <Container>
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="section-eyebrow">Education</p>
+              <h2 className="section-title mt-3">Academic snapshot</h2>
+            </div>
+            <Link href="/education" className="text-sm font-semibold text-accent hover:underline">
+              View education
+            </Link>
+          </div>
+          <div className="mt-6 grid gap-4 md:grid-cols-2 stagger">
+            {educationSnapshot.map((entry) => (
+              <div key={`${entry.institution}-${entry.degree}`} className="card hover-lift">
+                <Badge>{entry.degree}</Badge>
+                <p className="mt-3 text-sm text-muted">{entry.institution}</p>
+                <p className="mt-2 text-xs font-mono text-muted">
+                  {entry.startYear}–{entry.endYear}
                 </p>
               </div>
             ))}
