@@ -1,8 +1,8 @@
 # AGENTS.md
 
 ## Project purpose
-This repository contains the personal website of Komivi Assiamua.
-The site is a modern, text-first personal platform combining portfolio, projects, and writing.
+This repository contains the personal website of Komivi Jarod Manuel Assiamua.
+The site is a modern, text-first personal platform combining portfolio, projects, writing, and curated reading.
 
 ## Tech stack
 - Next.js App Router
@@ -36,6 +36,26 @@ The site is a modern, text-first personal platform combining portfolio, projects
 - Do not invent personal facts
 - Clearly mark placeholder content
 - Keep copy concise, thoughtful, and professional
+
+## 3-agent ownership model
+
+Agent 1 (design system + shared UI)
+- design system and tokens
+- shared UI components
+- layout, navbar, footer
+- reusable components
+
+Agent 2 (pages + content architecture)
+- page routes and structure
+- content models and markdown scaffolding
+- About, Education, Projects, Writing, Reading, Chess, Contact
+- homepage content structure
+
+Agent 3 (docs + quality)
+- AGENTS.md, README.md, spec.md, plans.md
+- CI and workflow docs
+- metadata and SEO basics
+- Vercel readiness
 
 ## When making changes
 - Inspect existing files first

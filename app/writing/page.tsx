@@ -6,7 +6,7 @@ import WritingCard from "@/components/WritingCard";
 import { getAllWriting } from "@/lib/writing";
 
 export const metadata: Metadata = {
-  title: "Writing | Komivi Assiamua",
+  title: "Writing | Komivi Jarod Manuel Assiamua",
   description: "Essays, notes, and research reflections in analytics and AI."
 };
 

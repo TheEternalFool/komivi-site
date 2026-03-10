@@ -6,7 +6,7 @@ import SocialLinks from "@/components/SocialLinks";
 import { profile } from "@/content/profile";
 
 export const metadata: Metadata = {
-  title: "Contact | Komivi Assiamua",
+  title: "Contact | Komivi Jarod Manuel Assiamua",
   description: "Get in touch for research, analytics, or collaboration."
 };
 

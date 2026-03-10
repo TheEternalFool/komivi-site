@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import "@/styles/globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { profile } from "@/content/profile";
 
 export const metadata: Metadata = {
-  title: "Komivi Assiamua | Personal Platform",
-  description: "Business analytics, AI, decision science, and entrepreneurship."
+  title: `${profile.fullName} | Personal Platform`,
+  description: profile.intro
 };
 
 export default function RootLayout({
