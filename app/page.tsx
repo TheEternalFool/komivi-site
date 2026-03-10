@@ -21,9 +21,9 @@ export default function HomePage() {
 
       <Section className="bg-surface/40">
         <Container>
-          <div>
-            <p className="text-xs font-mono uppercase tracking-[0.3em] text-muted">Introduction</p>
-            <h2 className="mt-3 text-2xl font-semibold text-text">A calm, rigorous approach to decisions</h2>
+          <div className="fade-in-up">
+            <p className="section-eyebrow">Introduction</p>
+            <h2 className="section-title mt-3">A calm, rigorous approach to decisions</h2>
           </div>
           <p className="mt-6 max-w-2xl text-sm leading-relaxed text-muted">
             {profile.intro} This space documents my projects, research notes, and intellectual interests at the
@@ -40,12 +40,12 @@ export default function HomePage() {
       <Section>
         <Container>
           <div className="flex items-center justify-between">
-            <h2 className="text-2xl font-semibold text-text">Featured projects</h2>
+            <h2 className="section-title">Featured projects</h2>
             <Link href="/projects" className="text-sm font-semibold text-accent hover:underline">
               View all
             </Link>
           </div>
-          <div className="mt-8 grid gap-6 md:grid-cols-2">
+          <div className="mt-8 grid gap-6 md:grid-cols-2 stagger">
             {featuredProjects.map((project) => (
               <ProjectCard key={project.slug} project={project} />
             ))}
@@ -56,12 +56,12 @@ export default function HomePage() {
       <Section className="bg-surface/40">
         <Container>
           <div className="flex items-center justify-between">
-            <h2 className="text-2xl font-semibold text-text">Selected writing</h2>
+            <h2 className="section-title">Selected writing</h2>
             <Link href="/writing" className="text-sm font-semibold text-accent hover:underline">
               Explore writing
             </Link>
           </div>
-          <div className="mt-8 grid gap-6 md:grid-cols-3">
+          <div className="mt-8 grid gap-6 md:grid-cols-3 stagger">
             {latestWriting.map((post) => (
               <WritingCard key={post.slug} post={post} />
             ))}
@@ -73,17 +73,17 @@ export default function HomePage() {
         <Container>
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-xs font-mono uppercase tracking-[0.3em] text-muted">Reading</p>
-              <h2 className="mt-3 text-2xl font-semibold text-text">Curated intellectual influences</h2>
+              <p className="section-eyebrow">Reading</p>
+              <h2 className="section-title mt-3">Curated intellectual influences</h2>
             </div>
             <Link href="/reading" className="text-sm font-semibold text-accent hover:underline">
               View reading list
             </Link>
           </div>
-          <div className="mt-6 grid gap-4 md:grid-cols-2">
+          <div className="mt-6 grid gap-4 md:grid-cols-2 stagger">
             {featuredReading.map((category) => (
-              <div key={category.name} className="card">
-                <Badge>{category.name}</Badge>
+              <div key={category.name} className="card hover-lift">
+                <Badge tone="accent">{category.name}</Badge>
                 <p className="mt-3 text-sm text-muted">
                   {category.description ?? "Placeholder: add a short note for this category."}
                 </p>
@@ -95,9 +95,9 @@ export default function HomePage() {
 
       <Section>
         <Container>
-          <div className="card flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <div className="card glow flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div>
-              <Badge>Contact</Badge>
+              <Badge tone="accent">Contact</Badge>
               <h2 className="mt-3 text-2xl font-semibold text-text">Let’s collaborate</h2>
               <p className="mt-2 text-sm text-muted">
                 Research, analytics products, or AI systems with real-world impact.
@@ -105,7 +105,7 @@ export default function HomePage() {
             </div>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-full bg-text px-6 py-3 text-sm font-semibold text-background"
+              className="inline-flex items-center justify-center rounded-full bg-text px-6 py-3 text-sm font-semibold text-background transition hover:translate-y-[-1px]"
             >
               Contact me
             </Link>
