@@ -1,13 +1,13 @@
 # Komivi Personal Platform
 
-Modern personal website built with Next.js (App Router), TypeScript, and Tailwind CSS. It serves as a portfolio, research hub, technical blog, and project showcase.
+Modern personal website built with Next.js (App Router), TypeScript, and Tailwind CSS. It serves as a portfolio, project showcase, writing platform, and research space.
 
 ## Tech Stack
 
 - Next.js (App Router)
 - TypeScript
 - Tailwind CSS
-- Markdown content (`posts/`)
+- Markdown content (`content/writing`)
 - Deployment: Vercel
 
 ## Project Architecture
@@ -15,25 +15,25 @@ Modern personal website built with Next.js (App Router), TypeScript, and Tailwin
 ```
 app/            Next.js routes (App Router)
 components/     Reusable UI components
-lib/            Utilities and data helpers (e.g., markdown loaders)
-posts/          Markdown blog posts
-styles/         Global styles and Tailwind layers
+content/        Profile, project data, and writing markdown
+lib/            Content utilities and data models
 public/         Static assets
+styles/         Global styles and Tailwind layers
 .github/        CI workflows
 ```
 
 ### Key App Routes
 
-- `/` Home (hero, featured projects, latest posts, CTA)
+- `/` Home (hero, intro, featured projects, writing, CTA)
 - `/about` About and skills
 - `/projects` Project grid
-- `/blog` Blog index
-- `/blog/[slug]` Blog post page (Markdown)
+- `/writing` Writing index
+- `/writing/[slug]` Writing detail (Markdown)
 - `/contact` Contact form + social links
 
 ### Content System
 
-Markdown files live in `posts/` and are parsed at build time using `gray-matter` and `remark`. Blog routes render dynamically with static params for each post slug.
+Markdown files live in `content/writing` and are parsed at build time using `gray-matter` and `remark`. Content models are defined in `lib/content.ts`.
 
 ## Development Workflow
 
@@ -73,8 +73,8 @@ Once the repo is connected in Vercel, deployments happen automatically on push.
 
 1. Install dependencies: `npm install`
 2. Start dev server: `npm run dev`
-3. Add/edit blog posts in `posts/`
-4. Update project content in `app/projects/page.tsx`
+3. Add/edit writing in `content/writing`
+4. Update projects in `content/projects.ts`
 5. Customize About and Home content
 
 ## License

@@ -1,7 +1,8 @@
 ---
 title: "AI Systems in Financial Markets"
 date: "2026-02-15"
-excerpt: "From signal discovery to risk control, AI is reshaping market intelligence."
+summary: "From signal discovery to risk control, AI is reshaping market intelligence."
+tags: ["ai", "markets", "risk"]
 ---
 
 AI in finance is not just about prediction. It is about building systems that can reason under uncertainty and remain robust across regimes.

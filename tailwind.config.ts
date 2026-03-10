@@ -4,20 +4,24 @@ const config: Config = {
   content: [
     "./app/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
+    "./content/**/*.{ts,tsx,md}",
     "./lib/**/*.{ts,tsx}"
   ],
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
-        ink: "#0f172a",
-        slate: "#475569",
-        mist: "#e2e8f0",
-        accent: "#0ea5e9",
-        sand: "#f8fafc"
+        background: "hsl(var(--background))",
+        surface: "hsl(var(--surface))",
+        text: "hsl(var(--text))",
+        muted: "hsl(var(--muted))",
+        border: "hsl(var(--border))",
+        accent: "hsl(var(--accent))"
       },
       fontFamily: {
-        display: ["'Space Grotesk'", "ui-sans-serif", "system-ui"],
-        body: ["'Inter'", "ui-sans-serif", "system-ui"]
+        display: ["var(--font-display)", "ui-sans-serif", "system-ui"],
+        body: ["var(--font-body)", "ui-sans-serif", "system-ui"],
+        mono: ["var(--font-mono)", "ui-monospace", "SFMono-Regular"]
       }
     }
   },

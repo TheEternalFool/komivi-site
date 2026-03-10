@@ -1,45 +1,33 @@
-import type { Route } from "next";
+import type { Metadata } from "next";
+import Container from "@/components/Container";
+import Section from "@/components/Section";
+import Badge from "@/components/Badge";
 import ProjectCard from "@/components/ProjectCard";
+import { projects } from "@/content/projects";
 
-const projects = [
-  {
-    title: "Market Regime Classifier",
-    description: "Identifies market phases and shifts using hidden Markov models.",
-    technologies: ["Python", "HMM", "Time Series"],
-    href: "/projects" as Route
-  },
-  {
-    title: "AI-Powered Credit Scoring",
-    description: "Explainable ML for credit risk and financial inclusion.",
-    technologies: ["XGBoost", "SHAP", "Fintech"],
-    href: "/projects" as Route
-  },
-  {
-    title: "Portfolio Stress Lab",
-    description: "Scenario analytics for multi-asset portfolios.",
-    technologies: ["Risk", "Optimization", "Analytics"],
-    href: "/projects" as Route
-  }
-];
+export const metadata: Metadata = {
+  title: "Projects | Komivi Assiamua",
+  description: "Selected work in analytics, AI, and decision science."
+};
 
 export default function ProjectsPage() {
   return (
-    <section className="section">
-      <div className="container">
+    <Section>
+      <Container>
         <div className="max-w-2xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate">Projects</p>
-          <h1 className="mt-4 text-3xl font-semibold">Applied research & product experiments</h1>
-          <p className="mt-4 text-sm text-slate">
-            A selection of projects spanning analytics, AI, and decision systems. Each project blends
-            technical depth with real-world impact.
+          <Badge>Projects</Badge>
+          <h1 className="mt-4 text-3xl font-semibold text-text">Applied research & product experiments</h1>
+          <p className="mt-4 text-sm leading-relaxed text-muted">
+            A selection of projects spanning analytics, AI, and decision systems. Each project blends technical
+            depth with real-world impact.
           </p>
         </div>
         <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
-            <ProjectCard key={project.title} {...project} />
+            <ProjectCard key={project.slug} project={project} />
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }

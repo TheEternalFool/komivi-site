@@ -1,7 +1,8 @@
 ---
 title: "Decision Intelligence for Modern Businesses"
 date: "2026-03-01"
-excerpt: "How probabilistic thinking and analytics help leaders make faster, better decisions."
+summary: "How probabilistic thinking and analytics help leaders make faster, better decisions."
+tags: ["decision science", "analytics", "strategy"]
 ---
 
 Decision intelligence blends analytics, strategy, and human judgment. It connects data pipelines to decision loops and helps teams operationalize uncertainty.
